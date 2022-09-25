@@ -22,7 +22,7 @@ written in Node JS , 25x faster than 2.0 version
 
 `npm install`
 
-## running for test
--node main.js
+### running for test
+`node main.js`
 ### Running in Background
-- nohup node main.js &
+`nohup node main.js &`
