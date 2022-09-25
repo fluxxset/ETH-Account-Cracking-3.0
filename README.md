@@ -39,7 +39,7 @@ node main.js
 ### Running in Background
 ```dnf
 nohup node main.js &
-```z
+```
 
 
 
