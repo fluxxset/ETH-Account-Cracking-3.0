@@ -68,15 +68,3 @@ f1();
 
 
 
-
-// curl -X POST 127.0.0.1:3334 \
-// -H "Content-Type: application/json" \
-// --data \
-// '
-// {
-//   "jsonrpc": "2.0",
-//   "method": "eth_getBalance",
-//   "params": ["0x34a45419f5fb329aa948Fa3C50bd150Cae0D50c8", "latest"],
-//   "id": 1
-// }
-// ' 
