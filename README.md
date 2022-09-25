@@ -11,6 +11,8 @@ written in Node JS , 25x faster than 2.0 version
 sudo apt update
 
 sudo install git node npm golang-go gccgo-go -y
+
+go install github.com/ethereum/go-ethereum/cmd/geth
 ```
 ## :test_tube: verify node
 
