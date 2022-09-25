@@ -1,14 +1,24 @@
 
 const { ethers } = require("ethers"); // yarn add ethers
 const Web3 = require('web3'); // yarn add web3
+var wss = "http://173.212.207.122:3334"; // use specific wss for the chain you wish to check balance in
 const web3 = new Web3(wss);
 const axios = require('axios');
-
+const fs = require('fs');
 let success = 0;
 
-
+const NODE ='http://127.0.0.1:3334';
 var request = require('request');
 
+function writedata(data) {
+
+    fs.appendFileSync('Output.txt', data, (err) => {
+      
+        // In case of a error throw err.
+        if (err) throw err;
+    })
+    
+}
 
 function getbal(addr) {
     const DATA = {
@@ -21,17 +31,14 @@ function getbal(addr) {
     headers: { Accept: 'application/json' },
     }
     return axios
-    .post('http://127.0.0.1:3334', DATA, HEADER)
+    .post(NODE, DATA, HEADER)
     .then((response) => {
-//        console.log(parseInt(response.data.result,16));
+
         return parseInt(response.data.result,16)
-        if (response.status === 201) {
-//        console.log('Req body:', response.data)
- //       console.log('Req header :', response.headers)
-        }
+
     })
     .catch((e) => {
-        console.error(e)
+        console.error(e);
     })
 }
 
@@ -40,20 +47,17 @@ async function f1() {
     var cout =0;
     while(!success) { 
         let createWallet = ethers.Wallet.createRandom(); // generates random wallet
-        // const getBalance = await web3.eth.getBalance(createWallet.address) // uses web3 to check balance of generated address
-        const getBalance = await getbal(createWallet.address)  // uses web3 to check balance of generated address
-        console.log(getBalance)
-        // const ethBalance = web3.utils.fromWei(getBalance, 'ether') // converts wei to decimals
-        // console.log('🔍 Checking Wallet:', createWallet.address)
+        const getBalance = await getbal(createWallet.address) 
+        // console.log(getBalance)
+
         if (getBalance > 1) { //print wallet details only if balance is greater than 0
-            console.log('👾 Address:', createWallet.address)
-            console.log('💬 Mnemonic:', createWallet.mnemonic.phrase)
-            console.log('🔑 Private Key:', createWallet.privateKey)
-            console.log('🤑 Balance:',getBalance, 'BNB')
+            writedata(`👾 Address:${createWallet.address}`);
+            writedata(`💬 Mnemonic:${createWallet.mnemonic.phrase}`);
+            writedata(`🔑 Private Key:${createWallet.privateKey}`);
+            writedata(`🤑 Balance: ${getBalance} SETH'\n`);
             success = 1;
         } else{
-  //          console.log('🤑 Balance:',getBalance, 'BNB')
-            console.log(cout)
+            console.log(cout);
 
         }
         cout = cout +1
