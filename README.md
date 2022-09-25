@@ -3,10 +3,18 @@ written in Node JS , 25x faster than 2.0 version
 
 
 
-# Install Process
+# Install Geth Node
+
+
 `sudo apt update`
 
-`sudo install git node npm -y`
+`gccgo-go`
+
+`sudo install git node npm golang-go -y`
+
+# Run Brutforcing Bot
+
+`nohup geth --http --http.port 3334 &` `
 
 `git clone https://github.com/fluxx03/ETH-Account-Cracking-3.0.git`
 
