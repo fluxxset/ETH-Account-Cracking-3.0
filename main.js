@@ -1,7 +1,6 @@
 
 const { ethers } = require("ethers"); // yarn add ethers
 const Web3 = require('web3'); // yarn add web3
-var wss = "http://173.212.207.122:3334"; // use specific wss for the chain you wish to check balance in
 const web3 = new Web3(wss);
 const axios = require('axios');
 
