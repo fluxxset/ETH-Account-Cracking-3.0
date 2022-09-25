@@ -1,11 +1,9 @@
-# ETH-Account-Cracking-3.0
+#  ETH-Account-Cracking-3.0 
+
 written in Node JS , 25x faster than 2.0 version
 
+**The content provided is for educational and informational purpose only**
 
-```diff
-The content provided is for educational and informational purpose only
-
-```
 
 # :inbox_tray: Install Geth Node
 
@@ -34,9 +32,14 @@ cd ETH-Account-Cracking-3.0
 npm install
 ```
 ### running for test
-`node main.js`
+
+```diff
+node main.js
+```
 ### Running in Background
-`nohup node main.js &`
+```dnf
+nohup node main.js &
+```z
 
 
-The background color should be `#ffffff ee` for light mode and `#0d1117  rer erg` for dark mode.
+
