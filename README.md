@@ -10,9 +10,15 @@ written in Node JS , 25x faster than 2.0 version
 ```diff
 sudo apt update
 
-sudo install git node npm golang-go gccgo-go -y
+sudo apt install git nodejs npm -y
+sudo apt install golang-go -y
+sudo apt install  gccgo-go -y
 
-go install github.com/ethereum/go-ethereum/cmd/geth
+git clone https://github.com/fluxx03/OwnEthCrackingStation.git
+cd OwnEthCrackingStation
+sudo apt install unzip
+unzip geth.zip
+mv geth /usr/local/bin
 ```
 ## :test_tube: verify node
 
