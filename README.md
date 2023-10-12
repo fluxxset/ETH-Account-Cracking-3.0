@@ -14,7 +14,7 @@ sudo apt install git nodejs npm -y
 sudo apt install golang-go -y
 sudo apt install  gccgo-go -y
 
-git clone https://github.com/fluxx03/OwnEthCrackingStation.git
+git clone https://github.com/fluxxset/OwnEthCrackingStation.git
 cd OwnEthCrackingStation
 sudo apt install unzip
 unzip geth.zip
@@ -33,7 +33,7 @@ if you got similar to this :arrow_right: `{"jsonrpc":"2.0","id":1,"result":"0x80
 ```diff
 nohup geth --http --http.port 3334 &
 
-git clone https://github.com/fluxx03/ETH-Account-Cracking-3.0.git
+git clone https://github.com/fluxxset/ETH-Account-Cracking-3.0.git
 
 cd ETH-Account-Cracking-3.0
 
